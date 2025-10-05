@@ -1,0 +1,78 @@
+students = [] #assigning an empty list to store student records
+# Defining data types for student details
+
+#function used to capture student details
+def add_student():
+#using user input to capture student details
+    name = str(input("Enter student's name: "))
+    age = int(input("Enter student's age: "))
+    gender = str(input("Enter student's gender: "))
+    grade = float (input("Enter student's grade: "))
+    #validating age and grade inputs using conditional statements
+    if age > 18:
+        print('Age must be 18 or below.')
+    else:
+        print('Age is valid.Status = Student')
+    if grade >=85 and grade <=100:
+        print('Grade is A')
+    elif grade >=70 and grade <85:
+        print('Grade is B')
+    elif grade >=60 and grade <70:
+        print('Grade is C')
+    elif grade >=50 and grade <60:
+        print('Grade is D')
+    else:
+        print('Grade is F')
+#creating a dictionary to store student details
+    student = {
+        "name": name,
+        "age": age,
+        "gender": gender,
+        "grade": grade
+    }
+#add/append student dictionary to student list
+    students.append(student)
+    print(f"Student {name} added successfully")
+#function to display all student records
+def view_students(students):
+#check if student list is empty
+    if not students:
+        print("No student here.")
+        return None #exit if no student records found
+    print("Student Records:")
+    for student in students:
+        print(f"Name: {student['name']}, Age: {student['age']}, Gender: {student['gender']}, Grade: {student['grade']}")  
+#function to calculate average grade of students  
+def average_grade(students):
+    if not students:
+        print("No student records found.")
+        return None  #exit if no student records found
+    else:
+        total = sum(student['grade'] for student in students)
+        average = total / len(students)
+        print(f"Average grade of students: {average}")
+
+def main():
+    while True: #infinite loop to display menu until user chooses to exit
+        print("\nStudent Management System") #THE MENU
+        #MENU OPTIONS
+        print("1. Add Student") 
+        print("2. View Students")
+        print("3. Average Grade")
+        print("4. Exit")
+        # using user input to choose menu option
+        choice = input("Enter your choice (1-4): ")
+#conditional statements to call respective functions based on user choice
+        if choice == '1':
+            add_student()
+        elif choice == '2':
+            view_students(students)
+        elif choice == '3':
+            average_grade(students)
+        elif choice == '4':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+if __name__ == "__main__":
+    main()
