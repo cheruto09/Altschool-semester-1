@@ -1,2 +1,33 @@
-# Altschool-semester-1
-Semester one projects
+# Altschool-semesteThis is a beginner-level project to help you practice basic Python concepts such as variables, data types, lists, dictionaries, conditionals, loops, and functions.
+
+Objectives
+
+– Practice using lists and dictionaries in Python.
+
+– Learn how to define and use functions.
+
+– Take input from users.
+
+– Perform simple calculations like averages.
+
+– Organize your code for readability.
+
+Tasks / Features
+
+Open `student_data.py` and complete the following tasks:
+
+1. Fill in the `add_student()` function to collect student info from the user.
+
+2. Complete the `view_students()` function to display all students.
+
+3. Implement `get_average_grade()` to return the average grade of all students.
+
+How to Run
+
+“`bash
+
+python main.py
+
+“`
+
+Good luck and have fun!
